@@ -10,8 +10,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="../public/assets/img/favicon.png" rel="icon">
-  <link href="../public/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="<?php echo base_url(); ?>public/assets/img/favicon.png" rel="icon">
+  <link href="<?php echo base_url(); ?>public/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 
 
@@ -20,17 +20,18 @@
 
   <!-- Vendor CSS Files -->
   <link href="<?php echo base_url(); ?>public/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../public/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-  <link href="../public/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="../public/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="../public/assets/vendor/venobox/venobox.css" rel="stylesheet">
-  <link href="../public/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="../public/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="<?php echo base_url(); ?>public/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="<?php echo base_url(); ?>public/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="<?php echo base_url(); ?>public/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="<?php echo base_url(); ?>public/assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="<?php echo base_url(); ?>public/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="<?php echo base_url(); ?>public/assets/vendor/aos/aos.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="../public/assets/css/style.css" rel="stylesheet">
+  <link href="<?php echo base_url(); ?>public/assets/css/style.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="../public/assets/css/jquery-confirm.min.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>public/assets/css/jquery-confirm.min.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>public/assets/css/fontawesome.css">
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 
@@ -48,8 +49,8 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo mr-auto fontRoboto fontBold"><a href="../"><img src="../public/assets/img/logo.png" height="55" width="45">&nbsp;Make My Notice</a></h1>
-      <h1 class="logo1 mr-auto"><img src="../public/assets/img/logo.png" height="55" width="55">
+      <h1 class="logo mr-auto fontRoboto fontBold"><a href="../"><img src="<?php echo base_url(); ?>public/assets/img/logo.png" height="55" width="45">&nbsp;Make My Notice</a></h1>
+      <h1 class="logo1 mr-auto"><img src="<?php echo base_url(); ?>public/assets/img/logo.png" height="55" width="55">
       <span class="fontBold" style="font-size: 22px;font-family:GraublauWeb">Make My Notice</spam></h1>
 
       <!-- Uncomment below if you prefer to use an image logo -->
