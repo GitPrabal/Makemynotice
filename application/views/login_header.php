@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>OnePage Bootstrap Template - Index</title>
+  <title>Make My Notice</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -56,7 +56,7 @@
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <li class="active"><a href="../">Home</a></li>
-          <li><a href="User/userHome">My Notices</a></li>
+          <li><a href="#" id="Mynotices">My Notices</a></li>
           <li class="drop-down"><a href="">File Notice</a>
             <ul>
               <li class="drop-down"><a href="#">Employee</a>
@@ -133,7 +133,7 @@
           </li>
            <li class="drop-down"><a href="#">Accounts</a>
             <ul>
-              <li><a href="#">Profile</a></li>
+              <li><a href="#" id="profile">Profile</a></li>
               <li><a href="#" id="logOut">Logout</a></li>
             </ul>
           </li>

@@ -52,7 +52,7 @@
               <div class="form-row">
                 <div class="col-md-12 form-group">
                  <label>Relief Required ?<sup class="red">*</sup></label>
-                     <textarea class="form-control" rows="8" id="relief" name="relief"></textarea>
+                     <textarea class="form-control disableAudio" rows="8" id="relief" name="relief"></textarea>
                   <div class="validate"></div>
                 </div>
               </div>
@@ -74,21 +74,16 @@
         <div class="row mt-5">
             <div class="col-lg-12">
                 <form action="#" method="post" role="form" class="php-email-form">
-                    <label><button type="button" class="makeNoticeBtn" name="" id="save_pf_claim">Send Details</button></label>
+                     <input type="hidden" name="data-table" value="pf_claim">
+                    <label><button type="button" class="makeNoticeBtn" name="" id="payment_gateway">Send Details</button></label>
                 </form>
             </div>
         </div>
         </div>
 
       </div>
-    </section><!-- End Sevices Section -->
+    </section>
 
-   
-
-    <!-- ======= Frequently Asked Questions Section ======= -->
-   
-
-    <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact"  style="padding: 30px;">
       <div class="container" data-aos="fade-up">
 
@@ -194,28 +189,7 @@
   <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
  <!--  <div id="preloader"></div>
  -->
-</body>
+
   <!-- Vendor JS Files -->
 
-  <script type="text/javascript">
-  
-    $( function() {
-
-      $("#alreadyLogin").click(function(){
-        $("#getStarted").modal('hide');
-        $("#logiModal").modal('show');
-      });
-
-    $("#newSignUp").click(function(){
-
-      $(".suspension-notice").click(function(){
-
-      })
-      $("#getStarted").modal('show');
-      $("#logiModal").modal('hide');
-    });
-
-
-  });
-  </script>
 

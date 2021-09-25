@@ -42,6 +42,11 @@ public function sendReplyNotice(){
 
       $this->load->model('Pulled_Notice_model');
 
+      echo  "<pre>";print_r($_POST);
+      echo  "----------";
+      echo "<pre>";print_r($_FILES);
+      die;
+
       $advocate_user_id = $this->session->userdata('advocate_user_id');
       $table_name       = $_POST['table_name'];
       $user_id          = $_POST['user_id'];

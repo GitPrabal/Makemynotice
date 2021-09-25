@@ -92,6 +92,20 @@
               </div>
           </div>
         </div>
+        
+        <div class="row mt-5">
+          <div class="col-lg-12  mt-lg-0">
+          <table style="border:0px;" class="table">
+                  <tbody><tr id="tr_audio_file" class="no-border">
+                     <td class="fontBold fontRoboto"> <b> Add Audio</b> </td>
+                     <td> <div class="upload-btn">
+                           <input type="file" id="audioFile" name="audioFile" onchange="checkAudio(this.id,'tr_audio_file')">
+                        </div>
+                     </td>
+                  </tr>
+               </tbody></table>
+          </div>
+        </div>
 
         
 

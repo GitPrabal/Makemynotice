@@ -9,7 +9,7 @@
         <div class="row">
          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100"></div>
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-box iconbox-blue width100 cursonPointer basic_details" data-table-name="pf_claim" >
+            <div class="icon-box iconbox-blue width100 cursonPointer basic_details" data-table-name="reply_to_bank" >
               <div class="icon">
                 <img src="../public/assets/icons/PF-Claim.png" style="width: 32px;height: 31px;">
               </div>

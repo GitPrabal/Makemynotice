@@ -63,6 +63,13 @@ class Employee extends CI_Controller {
 
             $bank_statement = "";
         }
+        
+        if(isset($_FILES['audioFile']['name'])){
+           $audioFile  =  uploadFiles($_FILES['audioFile']);
+        }else{
+
+            $audioFile = "";
+        }
 
         $adhar_front_name    = $this->session->userdata('adhar_front_name');
         $adhar_back_name     = $this->session->userdata('adhar_back_name');
@@ -98,15 +105,15 @@ class Employee extends CI_Controller {
                     'pincode'                  => $_SESSION['basic_details']['pincode'],
                     'state'                    => $_SESSION['basic_details']['state'],
                     'address'                  => $_SESSION['basic_details']['address'],
-                    'adhar_front'              => $adhar_front_name,
-                    'adhar_back'               => $adhar_back_name,
-                    'company_name'             => $company_name, 
-                    'address_company'          => $address_company,
-                    'employment_letter'        => $employment_letter,
-                    'bank_statement'         => $bank_statement,
-                    'communication'          => $communication,
-                    'relief'                   => $relief,
-                    'audio_file'                => $audioFile
+                    'adhar_front'  => $adhar_front_name,
+                    'adhar_back' => $adhar_back_name,
+                    'company_name'    => $company_name, 
+                    'address_company' => $address_company,
+                    'employment_letter' => $employment_letter,
+                    'bank_statement' => $bank_statement,
+                    'communication'  => $communication,
+                    'relief'         => $relief,
+                    'audio_file'     => $audioFile
 
             );
 

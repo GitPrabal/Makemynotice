@@ -22,7 +22,7 @@ class User extends CI_Controller {
     public function index(){
         
         $this->load->model('user_model');
-        $this->load->library('session');
+        $this->load->library('session');    
         
         //Including validation library
         //Setting values for tabel columns
@@ -78,7 +78,6 @@ class User extends CI_Controller {
 
         $this->load->library('session');
         $this->load->helper('url');
-        $session_user_id = $this->session->userdata('user_id');
         $this->session->sess_destroy();
         echo "1";
 
@@ -108,7 +107,6 @@ class User extends CI_Controller {
             $userData = $this->user_model->retriveUserData($session_user_id);
 
             $data =  array( 'data' => $userData , 'noticeList'=> $noticeList);
-
             $this->load->view('login_header');
             $this->load->view('user_notice_filled', $data);
             $this->load->view('footer');
@@ -336,11 +334,71 @@ class User extends CI_Controller {
         echo  $result;
 
     }
-
-
-
-
     
+        public function profile(){
+
+        $this->load->model('user_model');
+        $this->load->library('session');
+        $this->load->helper('url');
+        $session_user_id = $this->session->userdata('user_id');
+        $session_email = $this->session->userdata('email');
+        $user_login = $this->session->userdata('user_login');
+        $user_id    = $this->session->userdata('user_id');
+        $noticeList = array();
+        if( $user_login ){
+            $profileDetail = $this->user_model->retriveUserData($session_user_id);
+            $data =  array('profileDetail'=> $profileDetail);
+            $this->load->view('login_header');
+            $this->load->view('user_profile', $data);
+            $this->load->view('footer');
+        }else{
+            $this->session->sess_destroy();
+            $this->load->view('header');    
+            $this->load->view('home');
+        }
+
+    }
     
+      public function checkPhone(){
+
+        $this->load->model('user_model');
+        $this->load->library('session');
+        $this->load->helper('url'); 
+        $phone =  $this->input->post('phone');
+        $otp =  $this->input->post('otp');
+        $result = $this->user_model->checkPhone($phone);
+        if($result){
+            $date =  date("d-m-Y h:i:sa");
+            $data = array(
+                'phone' =>  $phone,
+                'otp' =>  $otp,
+                'date_added' =>  $date,
+            );
+            $otp = $this->generateOtp($data);
+            $this->session->set_userdata('phone',$phone);
+            echo  $otp;
+        }else{
+            echo  $result;
+        }
+	}
+	
+	public function generateOtp($data){
+
+        $this->load->model('user_model');
+        $this->load->helper('url');
+        $result = $this->user_model->generateOtp($data);
+        return $result;
+    }
+
+    public function verifyOtp(){
+
+        $this->load->model('user_model');
+        $this->load->library('session');
+        $this->load->helper('url'); 
+        $otp =  $this->input->post('otp');
+        $phone = $this->session->userdata('phone');
+        $result = $this->user_model->verifyOtp($phone,$otp);
+        echo  $result;
+    }
 
 }

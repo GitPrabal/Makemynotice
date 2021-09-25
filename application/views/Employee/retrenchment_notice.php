@@ -93,13 +93,27 @@
               </div>
           </div>
         </div>
+        
+        
+        <div class="row mt-5">
+          <div class="col-lg-12  mt-lg-0">
+          <table style="border:0px;" class="table">
+                  <tbody><tr id="tr_audio_file" class="no-border">
+                     <td class="fontBold fontRoboto"> <b> Add Audio</b> </td>
+                     <td> <div class="upload-btn">
+                           <input type="file" id="audioFile" name="audioFile" onchange="checkAudio(this.id,'tr_audio_file')">
+                        </div>
+                     </td>
+                  </tr>
+               </tbody></table>
+          </div>
+        </div>
 
 
           <div class="row mt-5">
           <div class="col-lg-6">
-           <input type="hidden" name="model" value="Employer" id="model">
-           <input type="hidden" name="function" id="function" value="retrenchmentFinalSubmit">
-           <label><button type="button" class="makeNoticeBtn" name="" id="saveDefendantData">Send Details</button></label>
+          <input type="hidden" name="data-table" value="retrenchment_notice">
+           <label><button type="button" class="makeNoticeBtn" name="" id="payment_gateway">Send Details</button></label>
            </form>
           </div>
         </div>

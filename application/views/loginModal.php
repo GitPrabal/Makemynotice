@@ -1,6 +1,6 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css">
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-<meta name="google-signin-client_id" content="642350212400-qbqs3ulhldemqhgl4lkdg8b3bt8l88fr.apps.googleusercontent.com">
+<meta name="google-signin-client_id" content="383371093700-njdpog5uhjgd4clth4leni083f8s394h.apps.googleusercontent.com">
+
 <div class="modal fade bd-example-modal-lg" id="logiModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
     <div class="modal-content">
@@ -12,7 +12,6 @@
                <span style="font-size: 17px;display: block;margin-top: 10px;margin-bottom: 10px;">Welcome Back, Please Login to your account</span>
                <br />
                <img src="../../public/assets/img/back_arrow.png" class="displayNone backImage" width="20" style="margin-bottom:20px;cursor:pointer;"/>
-               <br />
                <center>
                 <div class="alert alert-danger text-center error-msg" style="display: none;"></div>
                 <div class="text-center loader" style="display: none;">
@@ -23,31 +22,40 @@
                 
                </center>
 
-               <div class="loginWithOtp"> 
+               <div class=""> 
                 <form>
                   <div class="form-group">
-                    <label>Email / Phone </label>
-                    <input type="email" name="email" class="form-control" id="loginEmail">
+                    <label class="emailLabel">Email / Phone </label>
+                    <input type="email" name="email" placeholder="Email / Phone " class="form-control" id="loginEmail">
+                    <input type="text" placeholder="Enter OTP" name="otpTextBox" class="form-control" id="otpTextBox" style="display:none">
                     <span class="colorRed fontSize13 displayNone message">This field cannot be left blank</span>  
                   </div>
-                  <div class="form-group password_div displayNone">
-                    <label>Password</label>
-                    <input type="password" name="password" class="form-control" id="loginPass">
+                  <div class="form-group password_div">
+                    <label class="passLabel displayNone">Password</label>
+                    <input type="password" placeholder="Password" name="password" class="form-control displayNone" id="loginPassText">
                   </div>
                   <div class="allowBack" style="display:flex">
-                  <input type="button" id="loginWithOtp" name="" value="Login With Otp" class="btn btn-primary otp-button">&nbsp;
-                  <input type="button" id="loginWithPass" name="" value="Login With Password" class="btn btn-primary pass-button">
+                  <input type="button" id="loginWithOtpBtn" name="" value="Login With Otp" class="btn btn-primary otp-button">
+                  <input type="button" id="verifyOtpBtn" name="" value="Verify Otp" class="displayNone btn btn-primary otp-button">&nbsp;
+                  <input type="button" id="loginWithPassBtn" name="" value="Login With Password" class="btn btn-primary pass-button">
+                  <input type="button" id="loginUser" name="" value="Login" class="displayNone btn btn-primary">
                   </div>
-                  <input type="button" id="loginUser" name="" value="Login" class="displayNone btn btn-primary otp-button">
                 </form>
                 </div>
                 <br />
+                
 
-                <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                <div style="display:flex;" class="row">
+                <div class="col-md-5">
+                  <button class="loginBtn loginBtn--facebook"  style="height:50px;" onclick="fbLogin();" id="fbLink">
+                     Login with Facebook
+                  </button></div>
+                  <div class="col-md-6">
+                    <div id="gSignIn" style="margin-top:3px;"></div>
+                  </div><!-- Col -->
+                </div><!-- Row -->
 
 
-
-          
                 </div>
             </div>
 
@@ -110,7 +118,7 @@
 
                    <div class="form-group">
                     <label>Date Of Birth</label>
-                    <input type="text" name="dob" class="form-control" id="dob">
+                    <input type="text" name="dob" class="form-control datepicker" id="dob">
                   </div>
 
                   <div class="row">
@@ -121,11 +129,9 @@
                           <input type="radio" name="gender" value="female"> Female
                        </div>
                     </div>
-                    <div class="row mt-5">
-                       
-                    </div>
+                    
 
-                  <input type="button" id="userSignUp" name="" value="Register" class="btn btn-primary">
+                  <input type="button" id="userSignUp" name="" value="Register" class="btn btn-primary mt-2">
                   <!-- <a href="#" style="text-decoration: none"><span id="newSignUp" style="font-size: 11px;font-weight: bold;">Already a Member ? Sign In</span></a> -->
                 </form>
                 </div>
@@ -142,3 +148,6 @@
     </div>
   </div>
 </div>
+<script type="text/javascript">
+   
+</script>

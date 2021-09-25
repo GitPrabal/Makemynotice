@@ -96,8 +96,8 @@
                         <td class="fontBold fontRoboto"><b> Aadhar Front Side</b></td>
                         <td>
                             <div class="upload-btn">
-                                <input type="file" id="adharFront" name="adhar_front"
-                                       onchange="checkFile(this.id,'tr_aadhar_front')">
+                                <input type="file" id="adharFront" name="adhar_front" data-name="adharFront"
+                                       onchange="checkNoticeFile(this.id,'tr_aadhar_front')">
                             </div>
                             <span id="front_err_file" style="color:red;display: none;">Please select some files</span>
                         </td>
@@ -108,7 +108,7 @@
                         <td>
                             <div class="upload-btn">
                                 <input type="file" name="adhar_back" id="adhar_back"
-                                       onchange="checkFile(this.id,'tr_aadhar_back')">
+                                       onchange="checkNoticeFile(this.id,'tr_aadhar_back')">
                             </div>
                             <span id="back_err_file" style="color:red;display: none;">Please select some files</span>
                         </td>
@@ -123,7 +123,7 @@
             <div class="col-lg-6">
                 <form action="#" method="post" role="form" class="php-email-form">
                     <label>
-                        <button type="button" class="makeNoticeBtn" name="" id="send_basic_details">Send Details
+                        <button type="button" class="makeNoticeBtn" name="" id="send_basic_details">NEXT
                         </button>
                     </label>
                     <?php if (isset($_GET['page_name'])) { ?>
@@ -221,9 +221,4 @@
 <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
 <div id="preloader"></div>
 </body>
-<script type="text/javascript">
-    $(function () {
-        $(".datepicker").datepicker({dateFormat: 'dd-mm-yy', maxDate: new Date()});
-    });
-</script>
 

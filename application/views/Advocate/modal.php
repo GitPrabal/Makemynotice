@@ -50,7 +50,7 @@
        
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-primary" id="sendReplyNotice">Send</button>
+        <button type="button" class="btn btn-primary" id="sendReplyNotice">Send</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
@@ -142,48 +142,6 @@
 
 <script type="text/javascript">
   
-  $("#sendReplyNotice").click(function(e){
-    e.preventDefault();
-    var replyNoticeAttachment =  $("#replyNoticeAttachment").val();
-    if(replyNoticeAttachment == ""){
-        $("#replyNoticeAttachment").addClass("trBorder");
-        alert("Please select some files");
-        return;
-    }
-
-    $(this).prop("disabled","true");
-    $(".loader").show();
-
-    var base_url =  window.location.origin;
-
-    $.ajax({
-    url: base_url+"/Pulled_Notice/sendReplyNotice",
-    type: "POST",
-    data: new FormData(document.getElementById("reply-form")),
-    contentType: false,                  
-    processData:false,
-    success: function (response) {
-
-        $(this).prop("disabled","false");
-        $(".loader").hide();
-        if(response == "1"){
-            $(".successMsg").show();
-            $(".errorMsg").hide();;
-            $("#replyNoticeAttachment").val("");
-            window.location.reload()
-            return;
-        }
-        if(response == '2'){
-            $(".errorMsg").show();
-            $(".successMsg").hide();
-        }
-    },
-    error: function(jqXHR, textStatus, errorThrown) {
-       console.log(textStatus, errorThrown);
-     }
-    });
-
-})
 
 
 $("#uploadFinal").click(function(e){

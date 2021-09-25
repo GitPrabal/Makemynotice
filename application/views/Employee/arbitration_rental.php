@@ -38,10 +38,18 @@
          <div class="row">
           <div class="col-lg-12 mt-5 mt-lg-0">
           <table style="border:0px;" class="table">
-                  <tbody><tr id="tr_employment_letter" class="no-border">
-                     <td class="fontBold fontRoboto"> <b> Employment Letter like Employee Number or Position Of Employee</b> </td>
+                  <tbody>
+                  <tr id="tr_agreement_attachment" class="no-border">
+                     <td class="fontBold fontRoboto"> <b> Attachment Of Agreement</b> </td>
                      <td> <div class="upload-btn">
-                           <input type="file" id="employment_letter" name="employment_letter" onchange="checkFile(this.id,'tr_employment_letter')">
+                           <input type="file" id="agreement_attachment" name="agreement_attachment" onchange="checkFile(this.id,'tr_agreement_attachment')">
+                        </div>
+                     </td>
+                  </tr>
+                  <tr id="tr_previous_notice" class="no-border">
+                     <td class="fontBold fontRoboto"> <b> Any Prevoius Notice Sent to defendant</b> </td>
+                     <td> <div class="upload-btn">
+                           <input type="file" id="previous_notice" name="previous_notice" onchange="checkFile(this.id,'tr_previous_notice')">
                         </div>
                      </td>
                   </tr>
@@ -51,44 +59,63 @@
 
         <div class="row mt-5">
           <div class="col-lg-6">
-              <div class="form-row">
-                <div class="col-md-12 form-group">
-                 <label id = "label-motor-father-name" >Reason Of Termination ?<sup class="red">*</sup></label>
-                     <textarea class="form-control" rows="8" id="reason_termination" name="reason_termination"></textarea>
-                  <div class="validate"></div>
-                </div>
-              </div>
+             <label>Name <sup class="red">*</sup></label>
+             <input name="name" type="text" placeholder="Name"  class="form-control" id="name" >
+          </div>
+
+          <div class="col-lg-6">
+            <label id = "label-motor-father-name" >Position<sup class="red">*</sup></label>
+            <input type="text" placeholder="Position" name="position" id="position" class="form-control" />
           </div>
         </div>
+      
+
         <div class="row mt-5">
           <div class="col-lg-6">
               <div class="form-row">
                 <div class="col-md-12 form-group">
-                  <label id = "label-motor-father-name" >Date Of Termination ?<sup class="red">*</sup></label>
-                     <input name="date_termination" type="text" placeholder="Date Of Termination" class="form-control datepicker" id="date_termination" >
+                 <label id = "label-motor-father-name" >What is the complaint/issue to the address ?<sup class="red">*</sup></label>
+                     <textarea class="form-control" rows="8" id="complaint" name="complaint"></textarea>
+                     <span id="err_retrenchment_reason" style="color:red;font-weight: bolder;display: none">This Field is required</span>
                   <div class="validate"></div>
                 </div>
               </div>
           </div>
         </div>
-         <div class="row mt-5">
+
+        <div class="row mt-5">
           <div class="col-lg-6">
               <div class="form-row">
                 <div class="col-md-12 form-group">
-                   <label id = "label-motor-father-name" >Item handed over during termination ?<sup class="red">*</sup></label>
-                     <input name="item_handed" type="text" placeholder="Item handed during termination" class="form-control" id="item_handed" >
+                 <label id = "label-motor-father-name" >What is Relief Required?<sup class="red">*</sup></label>
+                     <textarea class="form-control" rows="8" id="relief" name="relief"></textarea>
+                     <span id="err_retrenchment_reason" style="color:red;font-weight: bolder;display: none">This Field is required</span>
                   <div class="validate"></div>
                 </div>
               </div>
           </div>
         </div>
 
+        <div class="row mt-5">
+          <div class="col-lg-12  mt-lg-0">
+          <table style="border:0px;" class="table">
+                  <tbody><tr id="tr_audio_file" class="no-border">
+                     <td class="fontBold fontRoboto"> <b> Add Audio</b> </td>
+                     <td> <div class="upload-btn">
+                           <input type="file" id="audioFile" name="audioFile" onchange="checkAudio(this.id,'tr_audio_file')">
+                        </div>
+                     </td>
+                  </tr>
+               </tbody></table>
+          </div>
+        </div>
+       
+    
+
           <div class="row mt-5">
           <div class="col-lg-6">
-          <input type="hidden" name="model" value="Employer" id="model">
-          <input type="hidden" name="function" id="function" value="terminationFinalSubmit">
-
-           <label><button type="button" class="makeNoticeBtn" name="" id="saveDefendantData">Send Details</button></label>
+           <input type="hidden" name="data-table" value="arbitration_rental">
+           <label><button type="button" class="makeNoticeBtn" name="" id="payment_gateway">Send Details</button></label>
            </form>
           </div>
         </div>

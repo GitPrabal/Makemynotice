@@ -116,9 +116,7 @@ parent::__construct();
 
     $query = $this->db->get();
     $pf_claim_list  = $query->result();
-
     $resultant =  array();
-
     $result =  array();
 
     for( $i = 0; $i < count($pf_claim_list);$i++){
@@ -475,6 +473,8 @@ public function enroachment(){
     if( $result == 1 || $result == '1' ){
 
       $email = $row->email;
+      $advocate_user_id = $row->advocate_user_id;
+
       $this->session->set_userdata('email',$email);
       $this->session->set_userdata('advocate_user_id',$advocate_user_id);
       

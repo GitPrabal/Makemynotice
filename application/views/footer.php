@@ -11,9 +11,19 @@
   <script src="<?php echo base_url(); ?>public/assets/js/jquery-confirm.min.js"></script>
   <script src="<?php echo base_url(); ?>public/assets/js/jquery.blockUI.js"></script>
   <!-- Template Main JS File -->
-  <script src="<?php echo base_url(); ?>public/assets/js/main.js"></script>
 <!-- Date Picker -->
 <!--   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->  
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://apis.google.com/js/client:platform.js?onload=renderButton" async defer></script>
+<script src="<?php echo base_url(); ?>public/assets/js/main.js"></script>
+<script src="<?php echo base_url(); ?>public/fb.js"></script>
+<script src="<?php echo base_url(); ?>public/google.js"></script>
+<script src="<?php echo base_url(); ?>public/assets/js/autosuggest.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $(".datepicker").datepicker({dateFormat: 'dd-mm-yy', maxDate: new Date()});
+    });
+</script>
+
 
 

@@ -8,7 +8,8 @@
   <title>Make My Notice</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-
+  
+  
   <!-- Favicons -->
   <link href="<?php echo base_url(); ?>public/assets/img/favicon.png" rel="icon">
   <link href="<?php echo base_url(); ?>public/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -70,7 +71,7 @@
                   <li><a href="#" class="basic_details" data-table-name="esi_claim">ESI Claim</a></li>
                   <li><a href="#" class="basic_details" data-table-name="salary_dues">Salary Dues</a></li>
                   <li><a href="#" class="basic_details" data-table-name="harrashment">Sexual Harrasment</a></li>
-                  <li><a href="#" class="basic_details" data-table-name="voilation_aggrement">Voilation of agreement</a></li>
+                  <li><a href="#" class="basic_details" data-table-name="voilation_aggrement">Voilation of nt</a></li>
                   <li><a href="#" class="basic_details" data-table-name="wrongful_termination">Wrongful Termination</a></li>
                   <li><a href="#" class="basic_details" data-table-name="gratuity_claim">Gratuity Claim</a></li>
                   <li><a href="#" class="basic_details" data-table-name="abuse_power">Abuse Of Power</a></li>
@@ -87,7 +88,7 @@
               </li>
               <li class="drop-down"><a href="#">Bank Conflicts</a>
                 <ul>
-                  <li><a href="#" class="basic_details" data-table-name="reply_notice">Reply To Notices</a></li>
+                  <li><a href="#" class="basic_details" data-table-name="reply_to_bank">Reply To Notices</a></li>
                   <li><a href="#" class="basic_details" data-table-name="sarfaesi_notice">Reply To SARFAESI</a></li>
                 </ul>
               </li>
@@ -113,7 +114,7 @@
                   <li><a href="#" class="basic_details" data-table-name="voilation_aggrement">Voialation Of Prenuptial Agreement</a></li>
                 </ul>
               </li>
-              <li><a href="#" class="basic_details">Agreement Draft</a></li>
+              <li><a href="#" class="basic_details" data-table-name="agreement_draft">Agreement Draft</a></li>
               <li class="drop-down"><a href="#">Consumer Case</a>
                 <ul>
                   <li><a href="#" class="basic_details" data-table-name="consumer_notice">Consumer Notice</a></li>

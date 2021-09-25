@@ -244,8 +244,7 @@ ul.sidebar-notice li.active a,ul.sidebar-notice li a:hover{
          <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12" style="background: #f3f6f8; padding-right:25px;padding-left:30px;height: 400px;overflow: auto;">
             <br /><br />
              <?php
-
-
+             
              if( count($noticeList) > 0 ){
               for( $i=0; $i < count($noticeList); $i++ ){   
 
@@ -450,7 +449,7 @@ ul.sidebar-notice li.active a,ul.sidebar-notice li a:hover{
                 <div class="panel-group" >
                    <div class="panel panel-default" style="background-color: #eeeeee;">
                      <div class="panel-heading">
-                        <center><a href="../FileNotice/fileNewNotice"><button class="btn btn-primary margin5" id="">File New Notice</button></a></center>
+                        <center><button class="btn btn-primary margin5" id="fileNewNotice">File New Notice</button></center>
                      </div>
                   </div>
                 </div>

@@ -37,11 +37,21 @@
 
          <div class="row">
           <div class="col-lg-12 mt-5 mt-lg-0">
-          <table style="border:0px;">
+          <table style="border:0px;" class="table">
                    <tr id="tr_complaint_harrashment" class="no-border">
                      <td> <b> Complaint Already Raised To HR</b> </td>
                      <td> <div class="upload-btn">
-                           <input type="file" name="complaint_harrashment" id="complaint_harrashment">
+                           <input type="file" name="complaint_harrashment"
+                           onchange="checkFile(this.id,'tr_complaint_harrashment')"
+                           id="complaint_harrashment">
+                        </div>
+                     </td>
+                  </tr>
+                  <tr id="tr_salary_slip" class="no-border">
+                     <td> <b> Salary Slip</b> </td>
+                     <td> <div class="upload-btn">
+                           <input type="file" name="salary_slip" id="salary_slip" 
+                           onchange="checkFile(this.id,'tr_salary_slip')">
                         </div>
                      </td>
                   </tr>
@@ -87,7 +97,8 @@
         </div>
           <div class="row mt-5">
           <div class="col-lg-6">
-           <label><button type="button" class="makeNoticeBtn" name="" id="salaryFinalSubmit">Send Details</button></label>
+          <input type="hidden" name="data-table" value="salary_dues">
+           <label><button type="button" class="makeNoticeBtn" name="" id="payment_gateway">Send Details</button></label>
            </form>
           </div>
         </div>

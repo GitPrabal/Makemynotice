@@ -4,13 +4,13 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
-!(function($) {
+!(function ($) {
   "use strict";
 
   // Preloader
-  $(window).on('load', function() {
+  $(window).on('load', function () {
     if ($('#preloader').length) {
-      $('#preloader').delay(100).fadeOut('slow', function() {
+      $('#preloader').delay(100).fadeOut('slow', function () {
         $(this).remove();
       });
     }
@@ -18,7 +18,7 @@
 
   // Smooth scroll for the navigation menu and links with .scrollto classes
   var scrolltoOffset = $('#header').outerHeight() - 2;
-  $(document).on('click', '.nav-menu a, .mobile-nav a, .scrollto', function(e) {
+  $(document).on('click', '.nav-menu a, .mobile-nav a, .scrollto', function (e) {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var target = $(this.hash);
       if (target.length) {
@@ -50,7 +50,7 @@
   });
 
   // Activate smooth scroll on page load with hash links in the url
-  $(document).ready(function() {
+  $(document).ready(function () {
     if (window.location.hash) {
       var initial_nav = window.location.hash;
       if ($(initial_nav).length) {
@@ -71,19 +71,19 @@
     $('body').prepend('<button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>');
     $('body').append('<div class="mobile-nav-overly"></div>');
 
-    $(document).on('click', '.mobile-nav-toggle', function(e) {
+    $(document).on('click', '.mobile-nav-toggle', function (e) {
       $('body').toggleClass('mobile-nav-active');
       $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
       $('.mobile-nav-overly').toggle();
     });
 
-    $(document).on('click', '.mobile-nav .drop-down > a', function(e) {
+    $(document).on('click', '.mobile-nav .drop-down > a', function (e) {
       e.preventDefault();
       $(this).next().slideToggle(300);
       $(this).parent().toggleClass('active');
     });
 
-    $(document).click(function(e) {
+    $(document).click(function (e) {
       var container = $(".mobile-nav, .mobile-nav-toggle");
       if (!container.is(e.target) && container.has(e.target).length === 0) {
         if ($('body').hasClass('mobile-nav-active')) {
@@ -101,10 +101,10 @@
   var nav_sections = $('section');
   var main_nav = $('.nav-menu, #mobile-nav');
 
-  $(window).on('scroll', function() {
+  $(window).on('scroll', function () {
     var cur_pos = $(this).scrollTop() + 200;
 
-    nav_sections.each(function() {
+    nav_sections.each(function () {
       var top = $(this).offset().top,
         bottom = top + $(this).outerHeight();
 
@@ -121,7 +121,7 @@
   });
 
   // Toggle .header-scrolled class to #header when page is scrolled
-  $(window).scroll(function() {
+  $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
       $('#header').addClass('header-scrolled');
     } else {
@@ -134,7 +134,7 @@
   }
 
   // Back to top button
-  $(window).scroll(function() {
+  $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
       $('.back-to-top').fadeIn('slow');
     } else {
@@ -142,7 +142,7 @@
     }
   });
 
-  $('.back-to-top').click(function() {
+  $('.back-to-top').click(function () {
     $('html, body').animate({
       scrollTop: 0
     }, 1500, 'easeInOutExpo');
@@ -174,12 +174,12 @@
   });
 
   // Porfolio isotope and filter
-  $(window).on('load', function() {
+  $(window).on('load', function () {
     var portfolioIsotope = $('.portfolio-container').isotope({
       itemSelector: '.portfolio-item'
     });
 
-    $('#portfolio-flters li').on('click', function() {
+    $('#portfolio-flters li').on('click', function () {
       $("#portfolio-flters li").removeClass('filter-active');
       $(this).addClass('filter-active');
 
@@ -190,7 +190,7 @@
     });
 
     // Initiate venobox (lightbox feature used in portofilo)
-    $(document).ready(function() {
+    $(document).ready(function () {
       $('.venobox').venobox({
         'share': false
       });
@@ -212,51 +212,51 @@
       once: true
     });
   }
-  $(window).on('load', function() {
+  $(window).on('load', function () {
     aos_init();
   });
 
 })(jQuery);
 
-$("#addContact").click(function(e){
+$("#addContact").click(function (e) {
   e.preventDefault();
-  var name    = $("#name").val();
-  var email   = $("#email").val();
+  var name = $("#name").val();
+  var email = $("#email").val();
   var subject = $("#subject").val();
   var message = $("#message").val();
 
   $.ajax({
-        url: 'Home/contact',
-        data: ({ title: title }),
-        type: 'post',
-        success: function(data) {
-            console.log(response);
-        }             
+    url: 'Home/contact',
+    data: ({ title: title }),
+    type: 'post',
+    success: function (data) {
+      console.log(response);
+    }
   });
 
 })
 
-   
-$(".basic_details").click(function(e){
-  var table_name =  $(this).attr("data-table-name");
-  window.location.href = "/Home/basic_details?page_name="+table_name;
+
+$(".basic_details").click(function (e) {
+  var table_name = $(this).attr("data-table-name");
+  window.location.href = "/Home/basic_details?page_name=" + table_name;
 })
 
 
 
-$("#send_basic_details").click(function(e){
+$("#send_basic_details").click(function (e) {
 
   e.preventDefault();
 
-  var firstname     = $("#firstname").val();
-  var dob          = $("#dob").val();
-  var lastname     = $("#lastname").val();
-  var phone     = $("#phone").val();
+  var firstname = $("#firstname").val();
+  var dob = $("#dob").val();
+  var lastname = $("#lastname").val();
+  var phone = $("#phone").val();
   var email = $("#email").val();
-  var consumer_phone     = $("#consumer-phone").val();
-  var pincode   = $("#pincode").val();
-  var state     = $("#state").val();
-  var address   = $("#address").val();
+  var consumer_phone = $("#consumer-phone").val();
+  var pincode = $("#pincode").val();
+  var state = $("#state").val();
+  var address = $("#address").val();
 
   var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
   var intRegex = /[0-9 -()+]+$/;
@@ -264,6 +264,7 @@ $("#send_basic_details").click(function(e){
 
   var base_url = window.location.origin;
 
+  /*
 
   if( firstname == ''){
     $("html, body").animate({ scrollTop: 0 }, "slow");
@@ -349,151 +350,81 @@ $("#send_basic_details").click(function(e){
     alert("Please Upload Adhar Back Side");
     return;
   }
+*/
 
   var page_name = $("#page_name").val();
   var base_url = window.location.origin;
 
+  $.blockUI({
+    css: { fontFamily: 'Roboto', backgroundColor: '#fffff', color: '#74c2e1', border: 'none', width: '20%', backgroundColor: 'none' },
+    baseZ: 2000
+  });
+
+
   $.ajax({
-          url: base_url+ "/Notice/saveNoticeData", 
-          type: "POST",             
-          data: new FormData(document.getElementById("notice-data")),
-          contentType: false,                  
-          processData:false,
-        
-        success: function(response)   
-        {
-          if(response=="3"){
+    url: base_url + "/BasicDetails/saveBasicDetails",
+    type: "POST",
+    data: new FormData(document.getElementById("notice-data")),
+    contentType: false,
+    processData: false,
 
-               $.confirm({
-                title: 'Already Registered Member',
-                content: 'Kindly Log in to continue',
-                type: 'red',
-                typeAnimated: true,
-                buttons: {
-                tryAgain: {
-                    text: 'Login',
-                    btnClass: 'btn-red',
-                    action: function(){
-                    }
-                },
-                  close: function () {
-                  }
-              }
-            });
-
-
-          $("#logiModal").modal('show');
-          return;
-          }else{
-            window.location.href= base_url+"/Notice/defendantView";
-          }
-        }
-    });
-
-})
-
-
-
-
-function checkFile(id,tr_id) {
-  
-    var fileInput = document.getElementById(id);
-    var filePath = fileInput.value;
-    var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.pdf)$/i;
-      
-    if (!allowedExtensions.exec(filePath)) {
-
-     $.confirm({
-        title: 'Unsupported File Format',
-        content: 'Allowed only PDF,PNG,JPEG',
-        type: 'red',
-        typeAnimated: true,
-        buttons: {
+    success: function (response) {
+      if (response == "3") {
+        $.unblockUI();
+        $.confirm({
+          title: 'Already Registered Member',
+          content: 'Kindly Log in to continue',
+          type: 'red',
+          typeAnimated: true,
+          buttons: {
             tryAgain: {
-                text: 'Try again',
-                btnClass: 'btn-red',
-                action: function(){
-                }
+              text: 'Login',
+              btnClass: 'btn-red',
+              action: function () {
+              }
             },
             close: function () {
             }
-        }
-});
-
-        document.getElementById(tr_id).classList.add("tr-border");
-        document.getElementById(tr_id).classList.remove("no-border");
-
-        fileInput.value = '';
-        return false;
-    } 
-    else 
-    {
-        $("#"+tr_id).removeClass("tr-border");
-        $("#"+tr_id).addClass("no-border");
-
-    }
-}
-
-function checkAudio(id,tr_id) {
-
-    var fileInput = document.getElementById(id);
-    var filePath = fileInput.value;
-    var allowedExtensions = /(\.mp3|\.wav|\.ogg)$/i;
-
-    if (!allowedExtensions.exec(filePath)) {
-
-        $.confirm({
-            title: 'Unsupported File Format',
-            content: 'Allowed only OGG,WAV,MP3',
-            type: 'red',
-            typeAnimated: true,
-            buttons: {
-                tryAgain: {
-                    text: 'Try again',
-                    btnClass: 'btn-red',
-                    action: function(){
-                    }
-                },
-                close: function () {
-                }
-            }
+          }
         });
+        $.unblockUI();
 
-        document.getElementById(tr_id).classList.add("tr-border");
-        document.getElementById(tr_id).classList.remove("no-border");
-
-        fileInput.value = '';
-        return false;
+        $("#logiModal").modal('show');
+        return;
+      } else {
+        $.unblockUI();
+        window.location.href = base_url + "/Notice/defendantView";
+      }
     }
-    else
-    {
-        $("#"+tr_id).removeClass("tr-border");
-        $("#"+tr_id).addClass("no-border");
+  });
 
-    }
-}
+})
 
-$("#save_pf_claim").click(function(e){
+
+
+
+
+
+$("#save_pf_claim").click(function (e) {
   e.preventDefault();
   var base_url = window.location.origin;
   $.ajax({
-          url: base_url+ "/Notice/save_pf_claim", 
-          type: "POST",             
-          data: new FormData(document.getElementById("notice-data")),
-          contentType: false,                  
-          processData:false,
-        success: function(response)   
-        {
-          if(response == "1"){
-             window.location.href= base_url+"/congoPage";
-             return;
-          }
-          if(response == '2'){         
-            alert("Something Wents Wrong Please Try After Some Time");
-          }
+    url: base_url + "/Notice/save_pf_claim",
+    type: "POST",
+    data: new FormData(document.getElementById("notice-data")),
+    contentType: false,
+    processData: false,
+    success: function (response) {
+      if (response == "1") {
+        window.location.href = base_url + "/Checkout";
+        return;
+      }
+      if (response == '2') {
+        alert("Something Wents Wrong Please Try After Some Time");
+      }
 
-        }
-    });
+    }
+  });
 
 
 })
@@ -501,116 +432,113 @@ $("#save_pf_claim").click(function(e){
 
 
 
-$("#esiClaimFinalSubmit").click(function(e){
+$("#esiClaimFinalSubmit").click(function (e) {
   e.preventDefault();
   var base_url = window.location.origin;
 
   if ($('#preloader').length) {
-            $('#preloader').delay(100).fadeOut('slow', function() {
-            $(this).remove();
-          });
+    $('#preloader').delay(100).fadeOut('slow', function () {
+      $(this).remove();
+    });
   }
 
-    $.ajax({
-          url: base_url+ "/Employee/esiClaimFinalSubmit", 
-          type: "POST",             
-          data: new FormData(document.getElementById("notice-data")),
-          contentType: false,                  
-          processData:false,
-        
-        success: function(response)   
-        {
+  $.ajax({
+    url: base_url + "/Employee/esiClaimFinalSubmit",
+    type: "POST",
+    data: new FormData(document.getElementById("notice-data")),
+    contentType: false,
+    processData: false,
 
-        if(response == "1"){
-          window.location.href= base_url+"/congoPage";
+    success: function (response) {
+
+      if (response == "1") {
+        window.location.href = base_url + "/congoPage";
         return;
-        }
-        if(response == '2'){         
-          alert("Something Wents Wrong Please Try After Some Time");
-        }
+      }
+      if (response == '2') {
+        alert("Something Wents Wrong Please Try After Some Time");
+      }
 
-        }
-    });
+    }
+  });
 
 
 })
 
-$("#takeToMyNotice").click(function(){
+$("#takeToMyNotice").click(function () {
   var base_url = window.location.origin;
-  window.location.href = base_url+ "/Home";
+  window.location.href = base_url + "/";
 });
 
 
-$("#salaryFinalSubmit").click(function(e){
+$("#salaryFinalSubmit").click(function (e) {
 
   e.preventDefault();
   var base_url = window.location.origin;
 
-    $.ajax({
-          url: base_url+ "/Employee/salaryFinalSubmit", 
-          type: "POST",             
-          data: new FormData(document.getElementById("notice-data")),
-          contentType: false,                  
-          processData:false,
-        
-        success: function(response)   
-        {   
-            
-        if(response == "1"){
-          window.location.href= base_url+"/congoPage";
-        return;
-        }
-        if(response == '2'){
-          alert("Something Wents Wrong Please Try After Some Time");
-    }
+  $.ajax({
+    url: base_url + "/Employee/salaryFinalSubmit",
+    type: "POST",
+    data: new FormData(document.getElementById("notice-data")),
+    contentType: false,
+    processData: false,
 
-        }
-    });
+    success: function (response) {
+
+      if (response == "1") {
+        window.location.href = base_url + "/congoPage";
+        return;
+      }
+      if (response == '2') {
+        alert("Something Wents Wrong Please Try After Some Time");
+      }
+
+    }
+  });
 
 
 })
 
 
 
-$("#harrasmentFinalSubmit").click(function(e){
+$("#harrasmentFinalSubmit").click(function (e) {
 
   e.preventDefault();
   var base_url = window.location.origin;
 
-    $.ajax({
-          url: base_url+ "/Employee/harrasmentFinalSubmit", 
-          type: "POST",             
-          data: new FormData(document.getElementById("notice-data")),
-          contentType: false,                  
-          processData:false,
-        
-        success: function(response)   
-        {   
-            
-        if(response == "1"){
-          window.location.href= base_url+"/congoPage";
-        return;
-        }
-        if(response == '2'){
-          alert("Something Wents Wrong Please Try After Some Time");
-    }
+  $.ajax({
+    url: base_url + "/Employee/harrasmentFinalSubmit",
+    type: "POST",
+    data: new FormData(document.getElementById("notice-data")),
+    contentType: false,
+    processData: false,
 
-        }
-    });
+    success: function (response) {
+
+      if (response == "1") {
+        window.location.href = base_url + "/congoPage";
+        return;
+      }
+      if (response == '2') {
+        alert("Something Wents Wrong Please Try After Some Time");
+      }
+
+    }
+  });
 
 })
 
 
-$("#userSignUp").click(function(){
+$("#userSignUp").click(function () {
 
 
-  var first_name   =  $("#first_name").val();
-  var last_name    =  $("#last_name").val();
-  var email        =  $("#email_id").val();
-  var phone        =  $("#phone_num").val();
-  var password     =  $("#password").val();
-  var dob          =  $("#dob").val();
-  var gender       =  $('input[name=gender]:checked').val();
+  var first_name = $("#first_name").val();
+  var last_name = $("#last_name").val();
+  var email = $("#email_id").val();
+  var phone = $("#phone_num").val();
+  var password = $("#password").val();
+  var dob = $("#dob").val();
+  var gender = $('input[name=gender]:checked').val();
   var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
   var intRegex = /[0-9 -()+]+$/;
   var letters = /^[A-Za-z]+$/;
@@ -625,7 +553,7 @@ $("#userSignUp").click(function(){
   //       age = age - 1;
   //   }
 
-  if(first_name == ''){
+  if (first_name == '') {
     $(".error-msg").show();
     $(".error-msg").html("Please Provide Valid Name");
     $("#first_name").focus();
@@ -634,7 +562,7 @@ $("#userSignUp").click(function(){
 
   }
 
-  if( !(first_name.match(letters)) ){
+  if (!(first_name.match(letters))) {
     $(".error-msg").show();
     $(".error-msg").html("Please Provide Valid Name");
     $("#first_name").focus();
@@ -642,7 +570,7 @@ $("#userSignUp").click(function(){
     return;
   }
 
-  if(last_name == ''){
+  if (last_name == '') {
     $(".error-msg").show();
     $(".error-msg").html("Please Provide Valid Name");
     $("#last_name").focus();
@@ -650,7 +578,7 @@ $("#userSignUp").click(function(){
     return;
   }
 
-  if( !(last_name.match(letters)) ){
+  if (!(last_name.match(letters))) {
 
     $(".error-msg").show();
     $(".error-msg").html("Please Provide Valid Name");
@@ -660,7 +588,7 @@ $("#userSignUp").click(function(){
     return;
   }
 
-  if(email == ''){
+  if (email == '') {
 
     $(".error-msg").show();
     $(".error-msg").html("Please Provide Valid Email");
@@ -670,7 +598,7 @@ $("#userSignUp").click(function(){
     return;
   }
 
-  if(!(regex.test(email))) {
+  if (!(regex.test(email))) {
 
     $(".error-msg").show();
     $(".error-msg").html("Please Provide Valid Email");
@@ -680,9 +608,8 @@ $("#userSignUp").click(function(){
     return;
 
   }
-    
-  if((phone.length < 10) || (!intRegex.test(phone)))
-  {
+
+  if ((phone.length < 10) || (!intRegex.test(phone))) {
     $(".error-msg").show();
     $(".error-msg").html("Please Provide Valid Number");
     $("#phone_num").focus();
@@ -690,8 +617,7 @@ $("#userSignUp").click(function(){
     $('.error-msg').delay(3000).fadeOut('slow');
     return;
   }
-  if( (phone.length != 10 ) )
-  {
+  if ((phone.length != 10)) {
     $(".error-msg").show();
     $(".error-msg").html("Please Provide Valid Number");
     $("#phone_num").focus();
@@ -700,7 +626,7 @@ $("#userSignUp").click(function(){
     return;
   }
 
-  if(password == ''){
+  if (password == '') {
 
     $(".error-msg").show();
     $(".error-msg").html("Please Provide Valid Password");
@@ -725,473 +651,914 @@ $("#userSignUp").click(function(){
   //   return;
   // }
 
-  var age =12;
+  var age = 12;
 
 
   var base_url = window.location.origin;
-  
+
   $.ajax({
-    url: base_url+"/User/",
+    url: base_url + "/User/",
     type: "post",
-    data:{'first_name':first_name,'last_name':last_name,'email':email,
-          'password':password,'dob':dob,'age':age,'phone':phone,'gender':gender},
+    data: {
+      'first_name': first_name, 'last_name': last_name, 'email': email,
+      'password': password, 'dob': dob, 'age': age, 'phone': phone, 'gender': gender
+    },
     dataType: 'json',
     cache: false,
 
     success: function (response) {
 
-    if(response.status=='404'){
+      if (response.status == '404') {
 
-    $(".error-msg").show();
-    $(".error-msg").html(response.msg);
-    $('#registerModal').animate({
+        $(".error-msg").show();
+        $(".error-msg").html(response.msg);
+        $('#registerModal').animate({
           scrollTop: $(".error-msg").offset().top
         }, 800);
 
-        $("#"+response.focus).focus();
-      return;
+        $("#" + response.focus).focus();
+        return;
 
-    }
+      }
 
-        $(".error-msg").hide();
-        $(".success-msg").show();
-        $(".success-msg").html(response.msg);
+      $(".error-msg").hide();
+      $(".success-msg").show();
+      $(".success-msg").html(response.msg);
 
-        $('#registerModal').animate({
-          scrollTop: $(".success-msg").offset().top
-        }, 800);
+      $('#registerModal').animate({
+        scrollTop: $(".success-msg").offset().top
+      }, 800);
 
-        $(".success-msg").focus();
-        window.location.href = base_url+"/Home";
+      $(".success-msg").focus();
+      window.location.href = base_url + "/Home";
 
     },
-    error: function(jqXHR, textStatus, errorThrown) {
-       console.log(textStatus, errorThrown);
+    error: function (jqXHR, textStatus, errorThrown) {
+      console.log(textStatus, errorThrown);
     }
-});
-  
+  });
+
 
 })
 
 
-$("#loginUser").click(function(){
+$("#loginUser").click(function () {
 
-  var loginEmail         = $("#loginEmail").val();
-  var loginPass          = $("#loginPass").val();
+  var loginEmail = $("#loginEmail").val();
+  var loginPass = $("#loginPassText").val();
   var redirectNoticeName = $("#noticeName").val();
   var base_url = window.location.origin;
 
   var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
 
-  if(loginEmail == ''){
+  if (loginEmail == '') {
     alert("Email is not valid");
     $("#loginEmail").focus();
     return;
   }
 
-  if(loginPass == ''){
+  if (loginPass == '') {
     alert("Password can not be blanked");
-    $("#loginPass").focus();
+    $("#loginPassText").focus();
     return;
   }
 
-  $(".error-msg").hide();
+  $.blockUI({
+    css: { fontFamily: 'Roboto', backgroundColor: '#fffff', color: '#74c2e1', border: 'none', width: '20%', backgroundColor: 'none' },
+    baseZ: 2000
+  });
 
-  $("#loader").show();
 
   $.ajax({
-        url: base_url+"/User/login",
-        type: "post",
-        data:{'email':loginEmail,'password':loginPass},
-        success: function (response) {
-          if( response==1 || response== '1' ){
-            $(".loader").show();
-            setTimeout(function(){ 
-              window.location.href = base_url+"/Home"
-               }, 2000);
-
-          }else{
-
-            $("#loginEmail").val('');
-            $("#loginPass").val('');
-            $(".error-msg").show();
-            $(".error-msg").html("<p>Invalid Credentials!</p>");
-            return;
-          }
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-           console.log(textStatus, errorThrown);
-        }
-    });
-
-})
-
-
-
-$("#logOut").click(function(){
-
-    var action  = 'logout';
-    var base_url = window.location.origin;
-
-  $.ajax({
-    url: base_url+"/User/userLogOut",
+    url: base_url + "/User/login",
     type: "post",
-    data:{'action':action},
+    data: { 'email': loginEmail, 'password': loginPass },
     success: function (response) {
-      window.location.href = base_url+"/Home"
-    },
-    error: function(jqXHR, textStatus, errorThrown) {
-       console.log(textStatus, errorThrown);
-    }
-});
-
- 
-})
-
-
-
-$("#voilationFinalSubmit").click(function(e){
-
-  e.preventDefault();
-  var base_url = window.location.origin;
-
-    $.ajax({
-          url: base_url+ "/Employee/voilationFinalSubmit", 
-          type: "POST",             
-          data: new FormData(document.getElementById("notice-data")),
-          contentType: false,                  
-          processData:false,
-        
-        success: function(response)   
-        {   
-            
-        if(response == "1"){
-           
-          window.location.href= base_url+"/congoPage";
-        return;
-        }
-        if(response == '2'){
-          $.unblockUI();
-          alert("Something Wents Wrong Please Try After Some Time");
-    }
-
-        }
-    });
-
-})
-
-
-$("#grauityFinalSubmit").click(function(e){
-
-  e.preventDefault();
-
-  var base_url = window.location.origin;
-
-    $.ajax({
-          url: base_url+ "/Employee/grauityFinalSubmit", 
-          type: "POST",             
-          data: new FormData(document.getElementById("notice-data")),
-          contentType: false,                  
-          processData:false,
-        
-        success: function(response)   
-        {   
-            
-        if(response == "1"){
-          window.location.href= base_url+"/congoPage";
-        return;
-        }
-        if(response == '2'){
-          $.unblockUI();
-          alert("Something Wents Wrong Please Try After Some Time");
-    }
-
-        }
-    });
-
-})
-
-
-$("#wrongfulTerminationFinalSubmit").click(function(e){
-
-  e.preventDefault();
-
-  var base_url = window.location.origin;
-
-  $.blockUI({
-     css: {fontFamily:'Roboto', backgroundColor: '#fffff', color: '#74c2e1',border:'none',width:'20%', backgroundColor:'none' },
-         baseZ: 2000
-  });
-
-
-    $.ajax({
-          url: base_url+ "/Employee/wrongfulTerminationFinalSubmit", 
-          type: "POST",             
-          data: new FormData(document.getElementById("notice-data")),
-          contentType: false,                  
-          processData:false,
-        
-        success: function(response)   
-        {
-          if(response=="3"){
-            $.unblockUI();
-            $("#logiModal").modal('show');
-            return;
-          }else{
-
-           $.unblockUI();
-         window.location.href= base_url+"/congoPage";
-     }
-
-        }
-    });
-})
-
-
-$("#abusePowerFinalSubmit").click(function(e){
-
-  e.preventDefault();
-
-  var base_url = window.location.origin;
-
-  $.blockUI({
-     css: { backgroundColor: '#fffff', color: '#74c2e1',border:'none',width:'30%', backgroundColor:'none' },
-         baseZ: 2000
-  });
-
-  $.ajax({
-          url: base_url+ "/Employee/abusePowerFinalSubmit", 
-          type: "POST",             
-          data: new FormData(document.getElementById("notice-data")),
-          contentType: false,                  
-          processData:false,
-         
-        
-        success: function(response)   
-        {
-          if(response=="3"){
-            $.unblockUI();
-            $("#logiModal").modal('show');
-            return;
-          }else{
-
-           $.unblockUI();
-         window.location.href= base_url+"/congoPage";
-     }
-
-        }
-    });
-})
-
-
-
-$("#nonPaymentFinalSubmit").click(function(e){
-
-  e.preventDefault();
-  var base_url = window.location.origin;
-
-  $.blockUI({
-     css: { backgroundColor: '#fffff', color: '#74c2e1',border:'none',width:'20%', backgroundColor:'none' },
-         baseZ: 2000
-  });
-
-    $.ajax({
-          url: base_url+ "/Employee/nonPaymentFinalSubmit", 
-          type: "POST",             
-          data: new FormData(document.getElementById("notice-data")),
-          contentType: false,                  
-          processData:false,
-        
-        success: function(response)   
-        {
-          if(response=="3"){
-            $.unblockUI();
-            $("#logiModal").modal('show');
-            return;
-          }else{
-
-           $.unblockUI();
-         window.location.href= base_url+"/congoPage";
-     }
-
-        }
-    });  
-
-})
-
-
-
-$("#MisconductFinalSubmit").click(function(e){
-
-  e.preventDefault();
-
-  var base_url = window.location.origin;
-
-  $.blockUI({
-     css: { backgroundColor: '#fffff', color: '#74c2e1',border:'none',width:'20%', backgroundColor:'none' },
-         baseZ: 2000
-  });
-
-  $.ajax({
-          url: base_url+ "/Employer/MisconductFinalSubmit", 
-          type: "POST",             
-          data: new FormData(document.getElementById("notice-data")),
-          contentType: false,                  
-          processData:false,
-
-        success: function(response)   
-        {
-
-        if(response == "1"){
-            $.unblockUI();
-          window.location.href= base_url+"/congoPage";
-        return;
-        }
-        if(response == '2'){
-          $.unblockUI();
-          alert("Something Wents Wrong Please Try After Some Time");
-    }
-
-        }
-    });
-
-})
-
-
-$("#suspensionFinalSubmit").click(function(e){
-  var base_url = window.location.origin;
-  $.blockUI({
-     css: { backgroundColor: '#fffff', color: '#74c2e1',border:'none',width:'20%', backgroundColor:'none' },
-     baseZ:2000
-  });
-
-    $.ajax({
-          url: base_url+ "/Employer/suspensionFinalSubmit", 
-          type: "POST",             
-          data: new FormData(document.getElementById("notice-data")),
-          contentType: false,                  
-          processData:false,
-
-        success: function(response)   
-        {
-
-        if(response == "1"){
-            $.unblockUI();
-          window.location.href= base_url+"/congoPage";
-        return;
-        }
-        if(response == '2'){
-          $.unblockUI();
-          alert("Something Wents Wrong Please Try After Some Time");
-    }
-
-        }
-    });
-
-})
-
-
-$("#saveDefendantData").click(function(e){
-  var base_url = window.location.origin;
-
-  var model         = $("#model").val();
-  var function_name = $("#function").val();
-  
-  $.blockUI({
-     css: { backgroundColor: '#fffff', color: '#74c2e1',border:'none',width:'20%', backgroundColor:'none' },
-     baseZ:2000
-  });
-
-    $.ajax({
-          url: base_url+"/"+model+"/"+function_name, 
-          type: "POST",             
-          data: new FormData(document.getElementById("notice-data")),
-          contentType: false,                  
-          processData:false,
-
-        success: function(response)   
-        {
-
-        if(response == "1"){
-            $.unblockUI();
-          window.location.href= base_url+"/congoPage";
-        return;
-        }
-        if(response == '2'){
-          $.unblockUI();
-          alert("Something Wents Wrong Please Try After Some Time");
-    }
-
-        }
-    });
-
-})
-
-
-$("#loginWithPass").click(function(e){
-  var loginEmail = $("#loginEmail").val();
-  if(loginEmail==''){
-    $(".message").addClass('displayBlock');
-    $(".message").removeClass('displayNone');
-    return;
-  }else{
-    $(".message").addClass('displayNone');
-    $(".message").removeClass('displayBlock');
-  }
-  $(".password_div").addClass('displayBlock');
-  $(".password_div").removeClass('displayNone');
-
-  $(".backImage").addClass('displayBlock');
-  $(".backImage").removeClass('displayNone');
-
-  $("#loginWithOtp").addClass('displayNone');
-  $("#loginWithOtp").removeClass('displayBlock');
-
-  $("#loginWithPass").addClass('displayNone');
-  $("#loginWithPass").removeClass('displayBlock');
-
-  $("#loginUser").addClass('displayBlock');
-  $("#loginUser").removeClass('displayNone');
-
-})
-
-$(".backImage").click(function(e){
-
-  $(".password_div").addClass('displayNone');
-  $(".password_div").removeClass('displayBlock');
-
-  $(".error-msg").hide();
-
-  $(".backImage").addClass('displayNone');
-  $(".backImage").removeClass('displayBlock');
-
-  $("#loginWithOtp").addClass('displayBlock');
-  $("#loginWithOtp").removeClass('displayNone');
-
-  $("#loginWithPass").addClass('displayBlock');
-  $("#loginWithPass").removeClass('displayNone');
-
-  $("#loginUser").addClass('displayNone');
-  $("#loginUser").removeClass('displayBlock');
-
-})
-
-$("#loginWithOtp").click(function(e){
-  $.confirm({
-    title: 'Unsupported Login Method',
-    content: 'OTP Server is under maintainance! Kindly Use Password',
-    type: 'red',
-    typeAnimated: true,
-    buttons: {
-        tryAgain: {
-            text: 'Try again',
-            btnClass: 'btn-red',
-            action: function(){
+      if (response == 1 || response == '1') {
+        $.unblockUI();
+        window.location.href = base_url + "/Home";
+      } else {
+
+        $.unblockUI();
+
+        $("#loginEmail").val('');
+        $("#loginPassText").val('');
+
+        $.confirm({
+          title: 'Invalid Credentials',
+          content: 'Kindly Check the credentials',
+          type: 'red',
+          typeAnimated: true,
+          buttons: {
+            tryAgain: {
+              text: 'Try again',
+              btnClass: 'btn-red',
+              action: function () {
+              }
+            },
+            close: function () {
             }
+          }
+        });
+
+
+        return;
+      }
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+      console.log(textStatus, errorThrown);
+    }
+  });
+
+})
+
+
+
+$("#logOut").click(function () {
+
+  var action = 'logout';
+  var base_url = window.location.origin;
+
+  $.ajax({
+    url: base_url + "/User/userLogOut",
+    type: "post",
+    data: { 'action': action },
+    success: function (response) {
+      window.location.href = base_url + "/Home"
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+      console.log(textStatus, errorThrown);
+    }
+  });
+
+
+})
+
+$("#Mynotices").click(function () {
+
+  var base_url = window.location.origin;
+  window.location.href = base_url + "/User/userHome";
+})
+
+
+
+$("#voilationFinalSubmit").click(function (e) {
+
+  e.preventDefault();
+  var base_url = window.location.origin;
+
+  $.ajax({
+    url: base_url + "/Employee/voilationFinalSubmit",
+    type: "POST",
+    data: new FormData(document.getElementById("notice-data")),
+    contentType: false,
+    processData: false,
+
+    success: function (response) {
+
+      if (response == "1") {
+
+        window.location.href = base_url + "/congoPage";
+        return;
+      }
+      if (response == '2') {
+        $.unblockUI();
+        alert("Something Wents Wrong Please Try After Some Time");
+      }
+
+    }
+  });
+
+})
+
+
+$("#grauityFinalSubmit").click(function (e) {
+
+  e.preventDefault();
+
+  var base_url = window.location.origin;
+
+  $.ajax({
+    url: base_url + "/Employee/grauityFinalSubmit",
+    type: "POST",
+    data: new FormData(document.getElementById("notice-data")),
+    contentType: false,
+    processData: false,
+
+    success: function (response) {
+
+      if (response == "1") {
+        window.location.href = base_url + "/congoPage";
+        return;
+      }
+      if (response == '2') {
+        $.unblockUI();
+        alert("Something Wents Wrong Please Try After Some Time");
+      }
+
+    }
+  });
+
+})
+
+
+$("#wrongfulTerminationFinalSubmit").click(function (e) {
+
+  e.preventDefault();
+
+  var base_url = window.location.origin;
+
+  $.blockUI({
+    css: { fontFamily: 'Roboto', backgroundColor: '#fffff', color: '#74c2e1', border: 'none', width: '20%', backgroundColor: 'none' },
+    baseZ: 2000
+  });
+
+
+  $.ajax({
+    url: base_url + "/Employee/wrongfulTerminationFinalSubmit",
+    type: "POST",
+    data: new FormData(document.getElementById("notice-data")),
+    contentType: false,
+    processData: false,
+
+    success: function (response) {
+      if (response == "3") {
+        $.unblockUI();
+        $("#logiModal").modal('show');
+        return;
+      } else {
+
+        $.unblockUI();
+        window.location.href = base_url + "/congoPage";
+      }
+
+    }
+  });
+})
+
+
+$("#abusePowerFinalSubmit").click(function (e) {
+
+  e.preventDefault();
+
+  var base_url = window.location.origin;
+
+  $.blockUI({
+    css: { backgroundColor: '#fffff', color: '#74c2e1', border: 'none', width: '30%', backgroundColor: 'none' },
+    baseZ: 2000
+  });
+
+  $.ajax({
+    url: base_url + "/Employee/abusePowerFinalSubmit",
+    type: "POST",
+    data: new FormData(document.getElementById("notice-data")),
+    contentType: false,
+    processData: false,
+
+
+    success: function (response) {
+      if (response == "3") {
+        $.unblockUI();
+        $("#logiModal").modal('show');
+        return;
+      } else {
+
+        $.unblockUI();
+        window.location.href = base_url + "/congoPage";
+      }
+
+    }
+  });
+})
+
+
+
+$("#nonPaymentFinalSubmit").click(function (e) {
+
+  e.preventDefault();
+  var base_url = window.location.origin;
+
+  $.blockUI({
+    css: { backgroundColor: '#fffff', color: '#74c2e1', border: 'none', width: '20%', backgroundColor: 'none' },
+    baseZ: 2000
+  });
+
+  $.ajax({
+    url: base_url + "/Employee/nonPaymentFinalSubmit",
+    type: "POST",
+    data: new FormData(document.getElementById("notice-data")),
+    contentType: false,
+    processData: false,
+
+    success: function (response) {
+      if (response == "3") {
+        $.unblockUI();
+        $("#logiModal").modal('show');
+        return;
+      } else {
+
+        $.unblockUI();
+        window.location.href = base_url + "/congoPage";
+      }
+
+    }
+  });
+
+})
+
+
+
+$("#MisconductFinalSubmit").click(function (e) {
+
+  e.preventDefault();
+
+  var base_url = window.location.origin;
+
+  $.blockUI({
+    css: { backgroundColor: '#fffff', color: '#74c2e1', border: 'none', width: '20%', backgroundColor: 'none' },
+    baseZ: 2000
+  });
+
+  $.ajax({
+    url: base_url + "/Employer/MisconductFinalSubmit",
+    type: "POST",
+    data: new FormData(document.getElementById("notice-data")),
+    contentType: false,
+    processData: false,
+
+    success: function (response) {
+
+      if (response == "1") {
+        $.unblockUI();
+        window.location.href = base_url + "/congoPage";
+        return;
+      }
+      if (response == '2') {
+        $.unblockUI();
+        alert("Something Wents Wrong Please Try After Some Time");
+      }
+
+    }
+  });
+
+})
+
+
+$("#suspensionFinalSubmit").click(function (e) {
+  var base_url = window.location.origin;
+  $.blockUI({
+    css: { backgroundColor: '#fffff', color: '#74c2e1', border: 'none', width: '20%', backgroundColor: 'none' },
+    baseZ: 2000
+  });
+
+  $.ajax({
+    url: base_url + "/Employer/suspensionFinalSubmit",
+    type: "POST",
+    data: new FormData(document.getElementById("notice-data")),
+    contentType: false,
+    processData: false,
+
+    success: function (response) {
+
+      if (response == "1") {
+        $.unblockUI();
+        window.location.href = base_url + "/congoPage";
+        return;
+      }
+      if (response == '2') {
+        $.unblockUI();
+        alert("Something Wents Wrong Please Try After Some Time");
+      }
+
+    }
+  });
+
+})
+
+
+$("#saveDefendantData").click(function (e) {
+  var base_url = window.location.origin;
+
+  var model = $("#model").val();
+  var function_name = $("#function").val();
+
+  $.blockUI({
+    css: { backgroundColor: '#fffff', color: '#74c2e1', border: 'none', width: '20%', backgroundColor: 'none' },
+    baseZ: 2000
+  });
+
+  $.ajax({
+    url: base_url + "/" + model + "/" + function_name,
+    type: "POST",
+    data: new FormData(document.getElementById("notice-data")),
+    contentType: false,
+    processData: false,
+
+    success: function (response) {
+
+      if (response == "1") {
+        $.unblockUI();
+        window.location.href = base_url + "/congoPage";
+        return;
+      }
+      if (response == '2') {
+        $.unblockUI();
+        alert("Something Wents Wrong Please Try After Some Time");
+      }
+
+    }
+  });
+
+})
+
+
+
+
+$("#fileNewNotice").click(function (e) {
+  var base_url = window.location.origin;
+  window.location.href = base_url + "/Home/fileNewNotice";
+})
+
+function sendMsg(number, otp) {
+
+  var base_url = window.location.origin;
+
+  $.ajax({
+    url: base_url + "/sendSms.php",
+    type: "post",
+    data: { 'phone': number, 'otp': otp },
+    success: function (response) {
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+      console.log(textStatus, errorThrown);
+    }
+  });
+
+}
+
+
+
+$("#loginWithOtpBtn").click(function () {
+
+
+  var number = $("#loginEmail").val();
+  var base_url = window.location.origin;
+  var phoneno = /^\d{10}$/;
+
+  if (!(number.match(phoneno))) {
+    $.confirm({
+      title: 'Invalid Number',
+      content: 'Only 10 Digit Number Is Allowed For OTP',
+      type: 'red',
+      typeAnimated: true,
+      buttons: {
+        tryAgain: {
+          text: 'Try again',
+          btnClass: 'btn-red',
+          action: function () {
+          }
         },
         close: function () {
         }
+      }
+    });
+    return;
+  }
+
+  var otp = Math.floor(100000 + Math.random() * 900000);
+
+
+  $.blockUI({
+    css: { fontFamily: 'Roboto', backgroundColor: '#fffff', color: '#74c2e1', border: 'none', width: '20%', backgroundColor: 'none' },
+    baseZ: 2000
+  });
+
+  $.ajax({
+    url: base_url + "/User/checkPhone",
+    type: "post",
+    data: { 'phone': number, 'otp': otp },
+    success: function (response) {
+      if (response == '1' || response === 1) {
+        $.unblockUI();
+        var sendSmsResult = sendMsg(number, otp);
+        alert("OTP Sent Successfully");
+        $("#loginEmail").hide();
+        $("#otpTextBox").show();
+        $(".emailLabel").html("");
+        $(".emailLabel").html("Enter OTP");
+        $("#loginWithOtpBtn").hide();
+        $("#verifyOtpBtn").addClass("displayBlock");
+        $("#verifyOtpBtn").removeClass("displayNone");
+        $(".backImage").addClass("displayBlock");
+        $(".backImage").removeClass("displayNone");
+        $("#loginWithPassBtn").hide();
+
+      } else {
+        $.unblockUI();
+        $.confirm({
+          title: 'Invalid Number',
+          content: 'Phone Number Is Not Registered',
+          type: 'red',
+          typeAnimated: true,
+          buttons: {
+            tryAgain: {
+              text: 'Try again',
+              btnClass: 'btn-red',
+              action: function () {
+              }
+            },
+            close: function () {
+            }
+          }
+        });
+      }
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+      console.log(textStatus, errorThrown);
     }
-});
+  });
+
+
 })
+
+$(".backImage").click(function () {
+  $("#loginEmail").show();
+  $("#otpTextBox").hide();
+  $(".emailLabel").html("");
+  $(".emailLabel").html("Email / Phone");
+  $("#loginWithOtpBtn").show();
+  $("#verifyOtpBtn").addClass("displayNone");
+  $("#verifyOtpBtn").removeClass("displayBlock");
+  $(".backImage").addClass("displayNone");
+  $(".backImage").removeClass("displayBlock");
+  $("#loginWithPassBtn").show();
+
+  $("#loginUser").hide();
+  $("#loginPassText").addClass("displayNone");
+  $("#loginPassText").removeClass("displayBlock");
+
+  $("#loginUser").addClass("displayNone");
+  $("#loginUser").removeClass("displayBlock");
+
+
+})
+
+$("#loginWithPassBtn").click(function () {
+  $("#loginPassText").removeClass("displa");
+  $("#loginWithOtpBtn").hide();
+  $("#loginWithPassBtn").hide();
+  $("#loginUser").addClass("displayBlock");
+  $("#loginUser").removeClass("displayNone");
+  $("#loginPassText").addClass("displayBlock");
+  $("#loginPassText").removeClass("displayNone");
+  $(".backImage").addClass("displayBlock");
+  $(".backImage").removeClass("displayNone");
+})
+
+
+$("#profile").click(function () {
+  var base_url = window.location.origin;
+  window.location.href = base_url + "/User/profile";
+})
+
+$(".largeImage").click(function () {
+
+  var imageSrcUrl = $(this).attr("src");
+  var modal = document.getElementById("myModal");
+
+  var img = document.getElementById("myImg");
+  var modalImg = document.getElementById("img01");
+
+  modal.style.display = "block";
+  modalImg.src = imageSrcUrl;
+
+})
+
+$("#closeModal").click(function (e) {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "none";
+})
+
+
+$("#revenue_disputes").click(function () {
+  window.location.href = "Home/revenue_disputes";
+})
+
+$("#employee_home").click(function () {
+  window.location.href = "Home/employee_home";
+})
+
+$("#family_disputes").click(function () {
+
+  window.location.href = "Home/family_disputes";
+})
+
+$("#rental_property").click(function () {
+
+  window.location.href = "Home/rental_property";
+
+});
+
+
+$("#bank_conflicts").click(function () {
+
+  window.location.href = "Home/bank_conflicts";
+
+});
+
+$("#agreement").click(function () {
+
+  window.location.href = "Home/agreement";
+
+});
+
+$("#consumer_case").click(function () {
+
+  window.location.href = "Home/consumer_case";
+
+});
+
+$("#insurance_disputes").click(function () {
+
+  window.location.href = "Home/insurance_disputes";
+
+});
+
+$("#consumer_disputes").click(function () {
+
+  window.location.href = "Home/consumer_disputes";
+
+})
+
+
+
+
+$("#verifyOtpBtn").click(function (e) {
+
+  e.preventDefault();
+  var otp = $("#otpTextBox").val();
+  var base_url = window.location.origin;
+
+  if (otp == '') {
+    $.confirm({
+      title: 'Invalid OTP',
+      content: 'Kindly Check OTP',
+      type: 'red',
+      typeAnimated: true,
+      buttons: {
+        tryAgain: {
+          text: 'Try again',
+          btnClass: 'btn-red',
+          action: function () {
+          }
+        },
+        close: function () {
+        }
+      }
+    });
+    return;
+  }
+
+
+  $.blockUI({
+    css: { fontFamily: 'Roboto', backgroundColor: '#fffff', color: '#74c2e1', border: 'none', width: '20%', backgroundColor: 'none' },
+    baseZ: 2000
+  });
+
+  $.ajax({
+    url: base_url + "/User/verifyOtp",
+    type: "post",
+    data: { 'otp': otp },
+    success: function (response) {
+      if (response == 1 || response == '1') {
+        $.unblockUI();
+        window.location.href = base_url + "/Home"
+      } else {
+        $.unblockUI();
+        $.confirm({
+          title: 'Invalid OTP',
+          content: 'Kindly Check OTP',
+          type: 'red',
+          typeAnimated: true,
+          buttons: {
+            tryAgain: {
+              text: 'Try again',
+              btnClass: 'btn-red',
+              action: function () {
+              }
+            },
+            close: function () {
+            }
+          }
+        });
+
+
+        return;
+      }
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+      console.log(textStatus, errorThrown);
+    }
+  });
+
+})
+
+
+$("#payment_gateway").click(function (e) {
+
+  e.preventDefault();
+
+  $.blockUI({
+    css: { fontFamily: 'Roboto', backgroundColor: '#fffff', color: '#74c2e1', border: 'none', width: '20%', backgroundColor: 'none' },
+    baseZ: 2000
+  });
+
+
+  var base_url = window.location.origin;
+  $.ajax({
+    url: base_url + "/Payment/add_to_payment",
+    type: "POST",
+    data: new FormData(document.getElementById("notice-data")),
+    contentType: false,
+    processData: false,
+    success: function (response) {
+      if (response == "1") {
+        $.unblockUI();
+        window.location.href = base_url + "/Checkout";
+        return;
+      }
+      if (response == '2') {
+        $.unblockUI();
+        alert("Something Wents Wrong Please Try After Some Time");
+      }
+
+    }
+  });
+
+
+})
+
+
+function checkNoticeFile(id, tr_id) {
+
+  var fileInput = document.getElementById(id);
+  var filePath = fileInput.value;
+  var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.pdf)$/i;
+
+  if (!allowedExtensions.exec(filePath)) {
+
+    $.confirm({
+      title: 'Unsupported File Format',
+      content: 'Allowed only PDF,PNG,JPEG',
+      type: 'red',
+      typeAnimated: true,
+      buttons: {
+        tryAgain: {
+          text: 'Try again',
+          btnClass: 'btn-red',
+          action: function () {
+          }
+        },
+        close: function () {
+        }
+      }
+    });
+
+    document.getElementById(tr_id).classList.add("tr-border");
+    document.getElementById(tr_id).classList.remove("no-border");
+
+    fileInput.value = '';
+    return false;
+  }
+  else {
+    $("#" + tr_id).removeClass("tr-border");
+    $("#" + tr_id).addClass("no-border");
+
+  }
+
+}
+
+
+
+
+
+function checkFile(id, tr_id) {
+
+  var property = document.getElementById(id).files[0];
+  var image_name = property.name;
+  var image_extension = image_name.split('.').pop().toLowerCase();
+
+  if (jQuery.inArray(image_extension, ['gif', 'jpg', 'jpeg', '', 'png', 'pdf']) == -1) {
+
+    $.confirm({
+      title: 'Unsupported File Format',
+      content: 'Allowed only PDF,PNG,JPEG',
+      type: 'red',
+      typeAnimated: true,
+      buttons: {
+        tryAgain: {
+          text: 'Try again',
+          btnClass: 'btn-red',
+          action: function () {
+          }
+        },
+        close: function () {
+        }
+      }
+    });
+
+    document.getElementById(tr_id).classList.add("tr-border");
+    document.getElementById(tr_id).classList.remove("no-border");
+    fileInput.value = '';
+    return false;
+  }
+
+  $("#" + tr_id).removeClass("tr-border");
+  $("#" + tr_id).addClass("no-border");
+
+  var base_url = window.location.origin;
+
+  var form_data = new FormData();
+  form_data.append("file",property);
+  form_data.append("name",id);
+  $.ajax({
+    url: base_url + "/UploadFile/upload",
+    method: 'POST',
+    data: form_data,
+    contentType: false,
+    cache: false,
+    processData: false,
+    beforeSend: function () {
+      $('#msg').html('Loading......');
+    },
+    success: function (data) {
+      console.log(data);
+      $('#msg').html(data);
+    }
+  });
+
+
+
+}
+
+
+
+function checkAudio(id, tr_id) {
+
+  var property = document.getElementById(id).files[0];
+  var image_name = property.name;
+  var image_extension = image_name.split('.').pop().toLowerCase();
+
+  if (jQuery.inArray(image_extension, ['mp3', 'mp4', 'wav', '', 'mov']) == -1) {
+
+    $.confirm({
+      title: 'Unsupported File Format',
+      content: 'Allowed only PDF,PNG,JPEG',
+      type: 'red',
+      typeAnimated: true,
+      buttons: {
+        tryAgain: {
+          text: 'Try again',
+          btnClass: 'btn-red',
+          action: function () {
+          }
+        },
+        close: function () {
+        }
+      }
+    });
+
+    document.getElementById(tr_id).classList.add("tr-border");
+    document.getElementById(tr_id).classList.remove("no-border");
+    fileInput.value = '';
+    return false;
+  }
+
+  $("#" + tr_id).removeClass("tr-border");
+  $("#" + tr_id).addClass("no-border");
+
+  var name  = $("#"+id).attr("data-name");
+  var base_url = window.location.origin;
+
+  var form_data = new FormData();
+  form_data.append("file",property);
+  form_data.append("name",name);
+  $.ajax({
+    url: base_url + "/UploadFile/upload",
+    method: 'POST',
+    data: form_data,
+    contentType: false,
+    cache: false,
+    processData: false,
+    beforeSend: function () {
+      $('#msg').html('Loading......');
+    },
+    success: function (data) {
+      console.log(data);
+      $('#msg').html(data);
+    }
+  });
+
+ 
+}

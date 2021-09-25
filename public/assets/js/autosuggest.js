@@ -170,7 +170,6 @@ function autocomplete(inp, arr) {
         }
     });
     function addActive(x) {
-        alert("inside add active");
         /*a function to classify an item as "active":*/
         if (!x) return false;
         /*start by removing the "active" class on all items:*/
@@ -210,7 +209,7 @@ var countries = ["PF Claim","ESI Claim","Salary Dues","Sexual Harrasment",
     "Non Payment Of Salary","Misconduct Notices","Suspension Notices",
     "Termination Notices","Retrenchment Notices",
     "Reply To Notices","Reply To SARFAESI","Title Deed Notices","Encroachment Notice",
-    "Trespassing Notice","Notice To Administration","Lessor and Lessee Disputes","Termination Notice",
+    "Trespassing Notice","Notice To Administration","Lessor and Lessee Disputes","Termination Rental",
     "Arbitration Notice","Delay In Construction","Divorce Application","Violation of Prenuptial Agreement",
     "Agreement Draft","Consumer Case","Product / Service","Motor Vehicle Claim",
     "Life Insurance Claim","Health Insurance Claim","Accidental Claim",

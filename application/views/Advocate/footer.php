@@ -68,57 +68,19 @@
 
 
 
-
-// $(".consumerNoticeDetails").click(function(){
-
-//       var consumer_list_id = $(this).attr("id");
-
-//       var base_url = window.location.origin;
-
-//       $("#viewNoticeDetail").modal('show');
-
-//       $.ajax({
-//         url: base_url+"/Admin/consumerNoticeDetails",
-//         type: "post",
-//         data:{'consumer_list_id':consumer_list_id},
-//         success: function (response) {
-//          $("#result").html(response);
-//         },
-//         error: function(jqXHR, textStatus, errorThrown) {
-//            console.log(textStatus, errorThrown);
-//         }
-//     });
-
-// });
+    $('.notice_list').DataTable({
+      'paging'      : true,
+      'lengthChange': true,
+      'searching'   : true,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : false
+    })
 
 
-$(".noticeDetails").click(function(){
-
-      var id         = $(this).attr("notice_id");
-      var table_name = $(this).attr("table-name");
-      var user_id    = $(this).attr("user_id");
-      var base_url   = window.location.origin;
 
 
-      $("#viewNoticeDetail").modal('show');
-      $("#loading").show();
 
-  $.ajax({
-    url: base_url+"/Advocate_Detail_Notice/"+table_name,
-    type: "post",
-    data:{'id':id},
-    success: function (response) {
-
-     $("#loading").hide();
-     $("#result").html(response);
-     
-    },
-    error: function(jqXHR, textStatus, errorThrown) {
-       console.log(textStatus, errorThrown);
-    }
- });
-
-});
 
 
 </script>

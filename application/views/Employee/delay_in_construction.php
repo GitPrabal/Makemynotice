@@ -32,9 +32,9 @@
           </div>
         </div>
 
-       
 
-       
+
+
           <div class="form-row mt-5">
                 <div class="col-md-12 form-group">
                 <label class="fontBold fontRoboto">Please Attach following copy of Documents in PDF or Image</label>
@@ -67,23 +67,36 @@
               </div>
           </div>
         </div>
+        <div class="row mt-5">
+          <div class="col-lg-12  mt-lg-0">
+          <table style="border:0px;" class="table">
+                  <tbody><tr id="tr_audio_file" class="no-border">
+                     <td class="fontBold fontRoboto"> <b> Add Audio</b> </td>
+                     <td> <div class="upload-btn">
+                           <input type="file" id="audioFile" name="audioFile" onchange="checkAudio(this.id,'tr_audio_file')">
+                        </div>
+                     </td>
+                  </tr>
+               </tbody></table>
+          </div>
+        </div>
+
 
 
           <div class="row mt-5">
           <div class="col-lg-6">
-           <input type="hidden" name="model" value="Rental_Disputes" id="model">
-           <input type="hidden" name="function" id="function" value="delayConstructionFinalSubmit">
-           <label><button type="button" class="makeNoticeBtn" name="" id="saveDefendantData">Send Details</button></label>
+          <input type="hidden" name="data-table" value="delay_in_construction">
+           <label><button type="button" class="makeNoticeBtn" name="" id="payment_gateway">Send Details</button></label>
            </form>
           </div>
         </div>
       </div>
     </section><!-- End Sevices Section -->
 
-   
+
 
     <!-- ======= Frequently Asked Questions Section ======= -->
-   
+
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact"  style="padding: 30px;">
@@ -94,7 +107,7 @@
           <!-- <p>The weather is amazing, walk with me through the pathway of more success. Take this journey with me, Lion! To succeed you must believe. When you believe, you will succeed.</p> -->
         </div>
 
-       
+
         <div class="row mt-5">
 
           <div class="col-lg-4">
@@ -180,7 +193,7 @@
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>  
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
         <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
         <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
         <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
@@ -195,7 +208,7 @@
   <!-- Vendor JS Files -->
 
   <script type="text/javascript">
-  
+
     $( function() {
 
       $("#alreadyLogin").click(function(){
@@ -215,4 +228,3 @@
 
   });
   </script>
-

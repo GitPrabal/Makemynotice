@@ -127,7 +127,7 @@ class Advocate extends CI_Controller {
 
         $this->load->model('admin_model');
         $this->load->model('advocate_model');
-
+        
         $newNoticeCount    = $this->advocate_model->newNoticeCount();
         $newNoticeCount    = $newNoticeCount["count"];
         $pulledNoticeCount = $this->advocate_model->pulledNoticeCount($advocate_user_id);

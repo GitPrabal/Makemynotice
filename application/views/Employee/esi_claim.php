@@ -88,7 +88,8 @@
 
           <div class="row mt-5">
           <div class="col-lg-6">
-           <label><button type="button" class="makeNoticeBtn" name="" id="esiClaimFinalSubmit">Send Details</button></label>
+           <input type="hidden" name="data-table" value="esi_claim">
+           <label><button type="button" class="makeNoticeBtn" name="" id="payment_gateway">Send Details</button></label>
            </form>
           </div>
         </div>

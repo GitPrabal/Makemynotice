@@ -108,9 +108,8 @@
 
           <div class="row mt-5">
           <div class="col-lg-6">
-           <input type="hidden" name="model" value="Agreement" id="model">
-           <input type="hidden" name="function" id="function" value="agreementFinalSubmit">
-           <label><button type="button" class="makeNoticeBtn" name="" id="saveDefendantData">Send Details</button></label>
+            <input type="hidden" name="data-table" value="agreement_draft">
+           <label><button type="button" class="makeNoticeBtn" name="" id="payment_gateway">Send Details</button></label>
            </form>
           </div>
         </div>
